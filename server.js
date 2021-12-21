@@ -1,6 +1,14 @@
-require('dotenv').config()
+// Dependencies
 const express = require('express')
 const app = express()
+
+// Configuration
+require('dotenv').config()
+const PORT = process.env.PORT
+
+// Middleware
+app.set('views', _dirname + "views")
+app.set('view engine', 'jsx')
 
 app.use('/places', require('./controllers/places'))
 
